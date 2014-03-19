@@ -16,15 +16,30 @@
       @if (count($tasks) > 0)
         @foreach($tasks as $task)
           <tr>
-            <td>{{ $task->description }}</td>
-            <td></td>
+            <td>{{{ $task->title }}}</td>
+            <td>
+                {{ Form::model('task', array('action' => array('TasksController@done', $task->id), 'method' => 'post', 'class' => 'form-inline')) }}
+                  {{ HTML::decode(Form::button('<span class="glyphicon glyphicon-ok"></span> Done', array('type' => 'submit', 'class' => 'btn btn-success btn-sm'))) }}      
+                {{ Form::close() }}             
+                {{ Form::model('task', array('action' => array('TasksController@destroy', $task->id), 'method' => 'delete', 'class' => 'form-delete form-inline')) }}
+                  {{ HTML::decode(Form::button('<span class="glyphicon glyphicon-remove"></span> Delete', array('type' => 'submit', 'class' => 'btn btn-danger btn-sm'))) }}      
+                {{ Form::close() }}
+            </td>
           </tr>
         @endforeach
         <tfooter>
           <tr>
-            <td colspan="2">{{ count($task) }} tasks</td>
+            <td colspan="2">{{ count($tasks) }} {{ trans_choice('task|tasks', count($tasks)) }}</td>
           </tr>
         </tfooter>
+        @section('script')
+          $(".form-delete").submit(function(e){
+              if (!confirm("Are you sure ?")) {
+                  e.preventDefault();
+                  return;
+              }
+          });
+        @stop
       @else
         <tr>
           <td colspan="2">No task ! Please create one first !</td>

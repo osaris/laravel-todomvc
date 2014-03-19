@@ -13,4 +13,6 @@
 
 Route::resource('tasks', 'TasksController', array('except' => array('show')));
 
+Route::post('tasks/{tasks}/done', array('as' => 'tasks.done', 'uses' => 'TasksController@done'));
+
 Route::get('/', 'TasksController@index');

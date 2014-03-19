@@ -77,6 +77,16 @@ class TasksController extends \BaseController {
 
 		return Redirect::route('tasks.index');
 	}
+  
+  public function done($id)
+  {
+		$task = Task::findOrFail($id);
+    $task->done = true;
+    $task->save();
+    
+    return Redirect::route('tasks.index')->with('result', 'success')
+                                         ->with('message', 'Task is now in done list !');
+  }
 
 	/**
 	 * Remove the specified resource from storage.

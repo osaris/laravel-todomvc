@@ -43,20 +43,7 @@ class TasksController extends \BaseController {
 		return Redirect::route('tasks.index');
 	}
 
-	/**
-	 * Display the specified task.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$task = Task::findOrFail($id);
-
-		return View::make('tasks.show', compact('task'));
-	}
-
-	/**
+  /**
 	 * Show the form for editing the specified task.
 	 *
 	 * @param  int  $id

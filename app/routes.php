@@ -11,6 +11,6 @@
 |
 */
 
-Route::resource('tasks', 'TasksController');
+Route::resource('tasks', 'TasksController', array('except' => array('show')));
 
 Route::get('/', 'TasksController@index');

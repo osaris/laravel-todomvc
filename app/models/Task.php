@@ -8,6 +8,10 @@ class Task extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = ['title'];
+  
+  protected $attributes = array(
+    'done' => false
+  );  
 
 }

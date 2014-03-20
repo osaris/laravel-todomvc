@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'New task')
 @section('content')
 
   <!-- if there are creation errors, they will show here -->

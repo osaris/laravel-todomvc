@@ -1,4 +1,9 @@
 @extends('layouts.default')
+@if($done)
+  @section('title', 'List of done tasks')
+@else
+  @section('title', 'List of tasks')
+@endif
 @section('content')
   <div class="row pull-right">
     {{ HTML::decode(link_to_action('TasksController@create', '<span class="glyphicon glyphicon-plus-sign"></span> Add a new task', null,array('class' => 'btn btn-primary'))) }}    

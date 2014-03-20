@@ -20,7 +20,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">TodoMVC</a>
+        {{ link_to_action('TasksController@index', 'TodoMVC', null, array('class' => 'navbar-brand')) }}
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">

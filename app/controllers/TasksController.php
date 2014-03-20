@@ -9,9 +9,18 @@ class TasksController extends \BaseController {
 	 */
 	public function index()
 	{
-		$tasks = Task::all();
+    if (Input::get('filter', '') == 'done') 
+    {
+      $tasks = Task::done()->get();
+      $done  = true;
+    }
+    else
+    {
+      $tasks = Task::active()->get();      
+      $done  = false;
+    }
 
-		return View::make('tasks.index', compact('tasks'));
+		return View::make('tasks.index', compact('tasks'))->with('done', $done);
 	}
 
 	/**

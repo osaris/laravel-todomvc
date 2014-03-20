@@ -14,4 +14,14 @@ class Task extends \Eloquent {
     'done' => false
   );  
 
+  public function scopeActive($query)
+  {
+    return $query->where('done', '=', false);
+  }
+  
+  public function scopeDone($query)
+  {
+    return $query->where('done', '=', true);
+  }  
+  
 }

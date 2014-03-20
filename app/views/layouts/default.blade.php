@@ -24,8 +24,8 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li>{{ link_to_action('TasksController@index', 'Done', array('filter=done')) }}</li>
+          <li class="{{ Helper::isActive('/^(\/)?$/') }}"><a href="/">Home</a></li>
+          <li class="{{ Helper::isActive('/^\/(.*)done$/')  }}">{{ link_to_action('TasksController@index', 'Done', array('filter=done')) }}</li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -34,7 +34,7 @@
 	<div class="container">
     {{ Helper::notification(Session::get('message'), Session::get('result')) }}
     
-			@yield('content')
+		@yield('content')
 	</div>
   
   <script>

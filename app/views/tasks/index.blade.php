@@ -44,7 +44,13 @@
         @stop
       @else
         <tr>
-          <td colspan="2">No task ! Please create one first !</td>
+          <td colspan="2">
+            @if($done)            
+              No task ! Please do some job first !
+            @else
+              No task ! Please create one first !
+            @endif
+          </td>
         </tr>
       @endif
     </tbody>

@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'pgsql',
+	'default' => 'pgsql_production',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -63,7 +63,18 @@ return array(
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
+    'pgsql_local' => array(                                                                                                                
+      'driver'   => 'pgsql',                                                                                                       
+      'host'     => 'localhost',                                                                                                   
+      'database' => 'todomvc_development',                                                                                         
+      'username' => 'action',                                                                                                      
+      'password' => '',                                                                                                            
+      'charset'  => 'utf8',                                                                                                        
+      'prefix'   => '',                                                                                                            
+      'schema'   => 'public',                                                                                                      
+    ),
+    
+		'pgsql_production' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'ec2-54-204-35-114.compute-1.amazonaws.com',
 			'database' => 'da40njucu4h5pi',

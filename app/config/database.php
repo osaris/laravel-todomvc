@@ -63,23 +63,23 @@ return array(
 			'prefix'    => '',
 		),
 
-    'pgsql_local' => array(                                                                                                                
-      'driver'   => 'pgsql',                                                                                                       
-      'host'     => 'localhost',                                                                                                   
-      'database' => 'todomvc_development',                                                                                         
-      'username' => 'action',                                                                                                      
-      'password' => '',                                                                                                            
-      'charset'  => 'utf8',                                                                                                        
-      'prefix'   => '',                                                                                                            
-      'schema'   => 'public',                                                                                                      
+    'pgsql_local' => array(
+      'driver'   => 'pgsql',
+      'host'     => 'localhost',
+      'database' => 'todomvc_development',
+      'username' => 'action',
+      'password' => '',
+      'charset'  => 'utf8',
+      'prefix'   => '',
+      'schema'   => 'public',
     ),
-    
+
 		'pgsql_production' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'ec2-54-204-35-114.compute-1.amazonaws.com',
-			'database' => 'da40njucu4h5pi',
-			'username' => 'nvymsywbzvyxrp',
-			'password' => '1Nv5wSNH-PjN1pARYGxniSmnon',
+			'host'     => 'ec2-54-225-101-199.compute-1.amazonaws.com',
+			'database' => 'd65kbtkbjkro52',
+			'username' => 'lnujhdrwmwrdjl',
+			'password' => 'bZpfh4vI9Lmqo-8c6L9rV6wQb1',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',

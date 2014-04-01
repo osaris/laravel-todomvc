@@ -9,7 +9,7 @@
   
     <div class="form-group">
       {{ Form::label('title', 'Title') }}
-      {{ Form::text('title', Input::old('title'), array('class' => 'form-control')) }}
+      {{ Form::text('title', null, array('class' => 'form-control')) }}
     </div>
     
     {{ Form::submit('Create', array('class' => 'btn btn-primary')) }}

@@ -3,6 +3,9 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+  "require-dev": {
+    "darsain/laravel-console": "dev-master"
+  },
 	"require": {
 		"laravel/framework": "4.1.*",
     "way/generators": "2.*"

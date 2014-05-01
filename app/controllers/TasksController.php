@@ -11,16 +11,17 @@ class TasksController extends \BaseController {
 	{
     if (Input::get('filter', '') == 'done') 
     {
-      $tasks = Task::done()->get();
+      $tasks = Task::done()->paginate(Task::$per_page);
       $done  = true;
     }
     else
     {
-      $tasks = Task::active()->get();      
+      $tasks = Task::active()->paginate(Task::$per_page);
       $done  = false;
     }
 
-		return View::make('tasks.index', compact('tasks'))->with('done', $done);
+		return View::make('tasks.index', compact('tasks'))->with('done', $done)
+                                                      ->with('tasksnb', Task::count());
 	}
 
 	/**

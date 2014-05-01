@@ -36,7 +36,7 @@
         @endforeach
         <tfooter>
           <tr>
-            <td colspan="2">{{ count($tasks) }} {{ trans_choice('task|tasks', count($tasks)) }}</td>
+            <td colspan="2">{{ $tasksnb }} {{ trans_choice('task|tasks', $tasksnb) }}</td>
           </tr>
         </tfooter>
         @section('script')
@@ -60,5 +60,6 @@
       @endif
     </tbody>
   </table>
+  {{ $tasks->appends(Input::except('page'))->links() }}
   </div>
 @stop

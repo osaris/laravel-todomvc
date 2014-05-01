@@ -6,6 +6,9 @@ class Task extends \Eloquent {
 	public static $rules = [
 	  'title' => 'required'
 	];
+  
+  // Number of tasks per page
+  public static $per_page = 3;
 
 	// Don't forget to fill this array
 	protected $fillable = ['title'];

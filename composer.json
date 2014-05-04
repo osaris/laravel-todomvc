@@ -5,6 +5,7 @@
 	"license": "MIT",
   "require-dev": {
     "darsain/laravel-console": "dev-master",
+    "phpunit/phpunit": "4.0.*",
     "way/generators": "2.*"    
   },
 	"require": {

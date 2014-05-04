@@ -4,7 +4,8 @@ return array(
 
   // comment
   'providers' => array(
-      'Darsain\Console\ConsoleServiceProvider'
+      'Darsain\Console\ConsoleServiceProvider',
+      'Way\Generators\GeneratorsServiceProvider'
    )
 
 );

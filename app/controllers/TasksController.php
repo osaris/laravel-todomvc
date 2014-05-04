@@ -45,12 +45,12 @@ class TasksController extends \BaseController {
 
 		if ($validator->fails())
 		{
-			return Redirect::route('tasks.create')->withErrors($validator)->withInput();
+			return Redirect::action('TasksController@create')->withErrors($validator)->withInput();
 		}
 
 		Task::create($data);
 
-		return Redirect::route('tasks.index');
+		return Redirect::action('TasksController@index');
 	}
 
   /**
@@ -80,12 +80,12 @@ class TasksController extends \BaseController {
 
 		if ($validator->fails())
 		{
-			return Redirect::route('tasks.edit')->withErrors($validator)->withInput();
+			return Redirect::action('TasksController@edit')->withErrors($validator)->withInput();
 		}
 
 		$task->update($data);
 
-		return Redirect::route('tasks.index');
+		return Redirect::action('TasksController@index');
 	}
   
   public function done($id)
@@ -94,8 +94,8 @@ class TasksController extends \BaseController {
     $task->done = true;
     $task->save();
     
-    return Redirect::route('tasks.index')->with('result', 'success')
-                                         ->with('message', 'Task is now in done list !');
+    return Redirect::action('TasksController@index')->with('result', 'success')
+                                                    ->with('message', 'Task is now in done list !');
   }
 
 	/**
@@ -109,7 +109,7 @@ class TasksController extends \BaseController {
     $task = Task::findOrFail($id);
     $task->delete();
 
-		return Redirect::route('tasks.index');
+		return Redirect::action('TasksController@index');
 	}
 
 }

@@ -11,8 +11,14 @@
 |
 */
 
-Route::resource('tasks', 'TasksController', array('except' => array('show')));
+Route::group(array(
+    'prefix' => LaravelLocalization::setLocale(),
+    'before' => 'LaravelLocalizationRedirectFilter' // LaravelLocalization filter
+  ),
+  function() {
+    Route::resource('tasks', 'TasksController', array('except' => array('show')));
 
-Route::post('tasks/{tasks}/done', array('as' => 'tasks.done', 'uses' => 'TasksController@done'));
+    Route::post('tasks/{tasks}/done', array('as' => 'tasks.done', 'uses' => 'TasksController@done'));
 
-Route::get('/', 'TasksController@index');
+    Route::get('/', 'TasksController@index');
+});

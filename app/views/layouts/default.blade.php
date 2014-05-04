@@ -24,8 +24,8 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="{{ Helper::isActive('/^(\/)?$/') }}"><a href="/">Home</a></li>
-          <li class="{{ Helper::isActive('/^\/(.*)done$/')  }}">{{ link_to_action('TasksController@index', 'Done', array('filter=done')) }}</li>
+          <li class="{{ Helper::isActive('/^(\/)?$/') }}"><a href="/">{{ trans('layout.home') }}</a></li>
+          <li class="{{ Helper::isActive('/^\/(.*)done$/')  }}">{{ link_to_action('TasksController@index', trans('layout.done'), array('filter=done')) }}</li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

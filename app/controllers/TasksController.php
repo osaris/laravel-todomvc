@@ -45,7 +45,7 @@ class TasksController extends \BaseController {
 
 		if ($validator->fails())
 		{
-			return Redirect::back()->withErrors($validator)->withInput();
+			return Redirect::route('tasks.create')->withErrors($validator)->withInput();
 		}
 
 		Task::create($data);
@@ -80,7 +80,7 @@ class TasksController extends \BaseController {
 
 		if ($validator->fails())
 		{
-			return Redirect::back()->withErrors($validator)->withInput();
+			return Redirect::route('tasks.edit')->withErrors($validator)->withInput();
 		}
 
 		$task->update($data);

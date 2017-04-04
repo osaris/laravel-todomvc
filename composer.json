@@ -11,6 +11,7 @@
 	"require": {
 		"laravel/framework": "4.1.*",
     "mcamara/laravel-localization": "0.13.*",
+		"php": "^5.6.16",
 		"ext-mcrypt": "*"
 	},
 	"autoload": {
@@ -38,7 +39,10 @@
 		]
 	},
 	"config": {
-		"preferred-install": "dist"
+		"preferred-install": "dist",
+		"platform": {
+				"php": "5.6.16"
+		}
 	},
 	"minimum-stability": "stable"
 }

@@ -6,11 +6,12 @@
   "require-dev": {
     "darsain/laravel-console": "dev-master",
     "phpunit/phpunit": "4.0.*",
-    "way/generators": "2.*"    
+    "way/generators": "2.*"
   },
 	"require": {
 		"laravel/framework": "4.1.*",
-    "mcamara/laravel-localization": "0.13.*"
+    "mcamara/laravel-localization": "0.13.*",
+		"ext-mcrypt": "*"
 	},
 	"autoload": {
 		"classmap": [

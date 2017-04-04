@@ -41,7 +41,7 @@
         </tfooter>
         @section('script')
           $(".form-delete").submit(function(e){
-            if (!confirm({{ trans('messages.sure') }})) {
+            if (!confirm('{{ trans('messages.sure') }}')) {
                   e.preventDefault();
                   return;
               }
